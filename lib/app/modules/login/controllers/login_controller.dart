@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:project_ujikom/app/modules/dashboard/views/dashboard_view.dart';
 
 import '../../../utils/api.dart';
 
@@ -36,6 +37,7 @@ class LoginController extends GetxController {
 
     if (response.body['success'] == true) {
       authToken.write('token', response.body['access_token']);
+      Get.offAll(() => const DashboardView());
     } else {
       Get.snackbar(
         'Error',
