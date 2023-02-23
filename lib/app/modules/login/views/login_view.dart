@@ -8,6 +8,7 @@ class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    LoginController controller = Get.put(LoginController());
     return Scaffold(
       backgroundColor: HexColor('#feeee8'),
       body: SingleChildScrollView(
@@ -20,7 +21,7 @@ class LoginView extends GetView<LoginController> {
                 fit: BoxFit.cover,
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 decoration: InputDecoration(
@@ -28,9 +29,10 @@ class LoginView extends GetView<LoginController> {
                   labelText: 'Email',
                   hintText: 'Masukan Email',
                 ),
+                controller: controller.emailController,
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(
                 left: 15.0,
                 right: 15.0,
@@ -44,6 +46,7 @@ class LoginView extends GetView<LoginController> {
                   labelText: 'Password',
                   hintText: 'Masukan Password',
                 ),
+                controller: controller.passwordController,
               ),
             ),
             const SizedBox(
@@ -57,7 +60,9 @@ class LoginView extends GetView<LoginController> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.loginNow();
+                },
                 child: const Text(
                   'Login',
                   style: TextStyle(
