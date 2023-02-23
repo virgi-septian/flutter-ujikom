@@ -10,6 +10,7 @@ class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    HomeController controller = Get.put(HomeController());
     return Scaffold(
       backgroundColor: HexColor('#feeee8'),
       appBar: AppBar(
