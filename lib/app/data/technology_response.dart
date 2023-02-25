@@ -1,11 +1,13 @@
-class TechnologyRespone {
+import 'package:flutter/material.dart';
+
+class TechnologyResponse {
   bool? succsess;
   String? message;
   List<Data>? data;
 
-  TechnologyRespone({this.succsess, this.message, this.data});
+  TechnologyResponse({this.succsess, this.message, this.data});
 
-  TechnologyRespone.fromJson(Map<String, dynamic> json) {
+  TechnologyResponse.fromJson(Map<String, dynamic> json) {
     succsess = json['succsess'];
     message = json['message'];
     if (json['data'] != null) {

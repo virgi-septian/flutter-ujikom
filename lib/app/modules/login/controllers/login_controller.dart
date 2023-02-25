@@ -10,10 +10,12 @@ import '../../../utils/api.dart';
 
 class LoginController extends GetxController {
   //TODO: Implement LoginController
+
   final _getConnect = GetConnect();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final authToken = GetStorage();
+
   // final count = 0.obs;
   @override
   void onInit() {

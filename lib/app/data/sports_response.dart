@@ -1,11 +1,13 @@
-class SportsRespone {
+import 'package:flutter/material.dart';
+
+class SportsResponse {
   bool? succsess;
   String? message;
   List<Data>? data;
 
-  SportsRespone({this.succsess, this.message, this.data});
+  SportsResponse({this.succsess, this.message, this.data});
 
-  SportsRespone.fromJson(Map<String, dynamic> json) {
+  SportsResponse.fromJson(Map<String, dynamic> json) {
     succsess = json['succsess'];
     message = json['message'];
     if (json['data'] != null) {

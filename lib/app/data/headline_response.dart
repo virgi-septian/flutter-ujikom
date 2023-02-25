@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class HeadlineResponse {
   bool? succsess;
   String? message;
